@@ -14,8 +14,8 @@ This is a test for Showtime Analytics Company
 ## Setup the Project
 
 ```
-git clone https://github.com/Joaostinglin/Showtime_Analytics.git
-cd Showtime_Analytics
+git clone https://github.com/Joaostinglin/Showtime_Analytics_Test.git
+cd Showtime_Analytics_Test
 Npm i (To install all dependencies)
 ```
 
