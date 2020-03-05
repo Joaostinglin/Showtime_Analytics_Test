@@ -1,0 +1,26 @@
+.movieCard-body{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.movie-informations{
+    width: 30%;
+}
+
+@media(max-width: 575px){
+    .movieCard-body{
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        flex-direction: column;
+    }
+    
+    .movie-informations{
+        width: 100%;
+    }
+
+    .movie-vote{
+        margin-top: .75rem;
+    }
+}
