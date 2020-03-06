@@ -20,13 +20,18 @@ const MovieDetail = (props) => {
             })
             .catch(err => console.log(err))
     }, [props.movieId])
-
-
+  
     return (
         <div>
             {loading ?
                 <Loading /> :
-                <CardMovieDetail name={movieDetail.original_title} body={""} img={""} />
+                <CardMovieDetail 
+                    title={movieDetail.original_title} 
+                    release_date={movieDetail.release_date} 
+                    vote_average={movieDetail.vote_average}
+                    overview={movieDetail.overview}
+                    poster_path={movieDetail.poster_path}
+                    production_companies={movieDetail.production_companies} />
                }
             {!loading && <button id="back-button" onClick={() => props.getMovieId(0)} className="btn btn-primary">back</button>}
 
