@@ -1,3 +1,81 @@
 div.movie-content{
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.movie-poster{
+    width: 150px;
+}
+
+/* responsivo mexer daqui pra baixo  remover o flex no responsivo*/
+.movie-content>div{
+    display: flex
+}
+
+.card-title-detail{
+    text-align: left;
+}
+
+.movie-vote-average{
+    text-align: right;
+}
+
+.card-title-detail>span{
+    font-size: .75rem;
+}
+
+.card-title-detail>h5{
+    margin: 0;
+}
+
+.movie-overview{
+    text-align: left;
+}
+
+.movie-geners-label{
+    text-align: left;
+}
+
+.movie-geners-type{
+    text-align: right;
+}
+
+.card-body .row:nth-child(2){
+    margin-top: 20px;
+}
+
+.card-body .row:nth-child(3){
+    margin-top: 20px;
+}
+
+.card-body .row:nth-child(4){
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.companies-label{
+    text-align: left;
+    font-size: .85rem;
+}
+
+
+/* responsivo flex-direction:column */
+.companies-box{
+display: flex;
+flex-wrap: wrap;
+}
+
+.company-content{
+    display: flex;
+    flex-direction: column;
+    font-size: .75rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 6px;
+}
+
+.company-content img{
+    width: 45px;
 }

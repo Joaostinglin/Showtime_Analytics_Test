@@ -1,5 +1,11 @@
 .body-content{
     padding: 30px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.detail-body{
+    width: 70%;
 }
 
 div.card-content-body{
@@ -16,6 +22,7 @@ div.search-field{
 div.body-content a{
     color: rgb(24, 21, 21);
 }
+
 
 @media(max-width: 575px){
     .body-content{

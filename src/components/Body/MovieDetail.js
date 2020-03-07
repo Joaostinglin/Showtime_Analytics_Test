@@ -22,7 +22,7 @@ const MovieDetail = (props) => {
     }, [props.movieId])
   
     return (
-        <div>
+        <div className="detail-body">
             {loading ?
                 <Loading /> :
                 <CardMovieDetail 
@@ -31,7 +31,8 @@ const MovieDetail = (props) => {
                     vote_average={movieDetail.vote_average}
                     overview={movieDetail.overview}
                     poster_path={movieDetail.poster_path}
-                    production_companies={movieDetail.production_companies} />
+                    production_companies={movieDetail.production_companies}
+                    genres={movieDetail.genres} />
                }
             {!loading && <button id="back-button" onClick={() => props.getMovieId(0)} className="btn btn-primary">back</button>}
 
