@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import MoviesApi from '../../Api/MoviesApi';
 import MovieCard from './MovieCard/MovieCard';
 
+import { connect} from 'react-redux'
+
 let moviesArr = [];
 
 const Movies = (props) => {
@@ -65,4 +67,4 @@ const Movies = (props) => {
     )
 
 }
-export default Movies;
+export default connect(null, null)(Movies);
