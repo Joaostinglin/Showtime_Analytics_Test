@@ -1,33 +1,26 @@
 import { dispatch } from 'rxjs/internal/observable/range'
 import MoviesApi from '../../Api/MoviesApi'
 
-// const INITIAL_STATE = {
-//     type: 'GET_MOVIES',
-//     moviesList: []
-// }
-
-
-function getMoviesSuccess(movies) {
+export const getMoviesSuccess = (movies) => {
     return {
         type: 'GET_MOVIES',
-        moviesList: movies
+        movies
     }
 }
 
-
-
 export const getMoviesListApi = () => {
     const moviesApi = new MoviesApi();
-    moviesApi.getMovies()
-        .then(response => {
-            dispatch(getMoviesSuccess(response.data.results))
-        })
-        .catch(err => console.log(err))
+    return dispatch => {
+        moviesApi.getMovies()
+            .then(response => {
+                dispatch(getMoviesSuccess(response.data.results))
+            })
+            .catch(err => console.log(err))
+    }
 }
 
-export const getMovies = () => {
-    return {
-        // dispatch(INITIAL_STATE)
-        getMoviesListApi()
+export const get20PopMovies = () => {
+    return dispatch => {
+        dispatch(getMoviesListApi())
     }
 }
