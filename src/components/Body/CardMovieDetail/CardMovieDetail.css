@@ -9,7 +9,6 @@ div.movie-content{
     width: 150px;
 }
 
-/* responsivo mexer daqui pra baixo  remover o flex no responsivo*/
 .movie-content>div{
     display: flex
 }
@@ -42,18 +41,17 @@ div.movie-content{
     text-align: right;
 }
 
-.card-body .row:nth-child(2){
+.movie-content .row-movie-content:nth-child(2){
     margin-top: 20px;
 }
 
-.card-body .row:nth-child(3){
+.movie-content .row-movie-content:nth-child(3){
+    margin-top: 20px;
+}
+.movie-content .row-movie-content:nth-child(4){
     margin-top: 20px;
 }
 
-.card-body .row:nth-child(4){
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
 
 .companies-label{
     text-align: left;
@@ -61,7 +59,6 @@ div.movie-content{
 }
 
 
-/* responsivo flex-direction:column */
 .companies-box{
 display: flex;
 flex-wrap: wrap;
@@ -83,12 +80,6 @@ flex-wrap: wrap;
 img.image-poster{
     width: 210px;
 }
-/* 
-media query 
-img.image-poster{
-    width: 70%;
-} */
-
 
 .align-left{
     text-align: left;
@@ -99,4 +90,61 @@ img.image-poster{
 
 .row-movie-content{
     display: flex;
+}
+
+@media(max-width: 1199px){
+    .movie-content>div {
+        justify-content: center;
+    }
+}
+
+@media(max-width: 576px){
+  
+    div.genres{
+    display: flex;
+    flex-direction: column;    }
+
+  div.genres>div.align-left{
+      text-align: center;
+    }
+
+    div.genres>div.align-rigth{
+        text-align: center;
+      }
+      .companies-box{
+        flex-direction: column;
+      }
+
+      .procuction-content>div{
+          text-align: center;
+      }
+
+      img.image-poster{
+        width: 70%;
+    }
+}
+
+@media(max-width: 768px){
+  
+    div.title-date-vote{
+    display: flex;
+    flex-direction: column;    }
+
+  div.title-date-vote>div.align-left{
+      text-align: center;
+    }
+
+    div.title-date-vote>div.align-rigth{
+        text-align: center;
+      }
+}
+
+
+.genres>div.align-left>span{
+    font-weight: 500;
+}
+
+
+.procuction-content>div.align-left>span{
+    font-weight: 500;
 }

@@ -33,4 +33,7 @@ div.body-content a{
         display: inline-block;
         margin-bottom: 10px;
     }
+    .detail-body{
+        width: 100%;
+    }
 }

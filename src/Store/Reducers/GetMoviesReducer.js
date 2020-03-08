@@ -6,7 +6,6 @@ const INITIAL_STATE = {
 
 
 export default function movies(state = INITIAL_STATE, action) {
-    // debugger
     switch (action.type) {
         case 'GET_MOVIES':
             return {
