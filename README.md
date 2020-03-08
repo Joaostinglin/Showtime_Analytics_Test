@@ -26,5 +26,10 @@ Inside the project folder, run the command:
 ```
 Npm start
 ```
-
 It will open a browser, running the appication.
+
+
+![Image1](https://github.com/Joaostinglin/Showtime_Analytics_Test/blob/master/prints/teste1.jpg?raw=true)
+![Image2](https://github.com/Joaostinglin/Showtime_Analytics_Test/blob/master/prints/teste2.jpg?raw=true)
+![Image3](https://github.com/Joaostinglin/Showtime_Analytics_Test/blob/master/prints/teste3.jpg?raw=true)
+![Image4](https://github.com/Joaostinglin/Showtime_Analytics_Test/blob/master/prints/teste4.jpg?raw=true)
