@@ -79,3 +79,24 @@ flex-wrap: wrap;
 .company-content img{
     width: 45px;
 }
+
+img.image-poster{
+    width: 210px;
+}
+/* 
+media query 
+img.image-poster{
+    width: 70%;
+} */
+
+
+.align-left{
+    text-align: left;
+}
+.align-rigth{
+    text-align: right;
+}
+
+.row-movie-content{
+    display: flex;
+}

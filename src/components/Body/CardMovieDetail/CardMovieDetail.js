@@ -12,21 +12,21 @@ const CardMovieDetail = (props) => {
     useEffect(() => {
         setGenres(props.genres)
         setCompanies(props.production_companies)
-        console.log(props)
+        console.log(props.genres)
     }, [])
 
 
     function concatGenresMap() {
         return genres.map((gen, i) => {
             return (
-                <span>{i === genres.length - 1 ? gen.name : gen.name + ", "}</span>)
+                <span key={i}>{i === genres.length - 1 ? gen.name : gen.name + ", "}</span>)
         })
     }
 
     function productionCompaniesMap() {
-        return companies.map(comp => {
+        return companies.map((comp, i) => {
             return (
-                <div className="company-content">
+                <div key={i} className="company-content">
                     <img src={Constants.imgRenderUrl + comp.logo_path}></img>
                     <span>{comp.name}</span>
                 </div>
@@ -35,56 +35,42 @@ const CardMovieDetail = (props) => {
     }
 
     return (
-        <div className="card text-center movie-content">
+        <div className="conainter card text-center movie-content">
+            <div className="row box-total">
 
-            <div className="card-body">
-                <div className="movie-poster">
-                    <img src={Constants.imgRenderUrl + props.poster_path} alt={props.title}></img>
+                <div className="col-lg-4 col-sm col-md-8">
+                    {/* <div className="card-body">
+                            <div className="movie-poster"> */}
+                    <img className="image-poster" src={Constants.imgRenderUrl + props.poster_path} alt={props.title}></img>
+                    {/* </div>
+                        </div> */}
                 </div>
 
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6 col-sm col-md-8 card-title-detail">
+                <div className="col-xl-8 col-sm col-md-8">
+                    <div className="container row-movie-content" >
+                        <div className="col-xl-6 col-sm col-md-8 align-left">
                             <h5>{props.title}</h5>
                             <span>{props.release_date}</span>
                         </div>
-                        <div className="col-lg-6 col-sm col-md-2 movie-vote-average">
+                        <div className="col-xl-6 col-sm col-md-2 align-rigth">
                             <h5>{props.vote_average}</h5>
                         </div>
+
+
                     </div>
-
-                    <div className="row ">
-                        <div className="col-lg-12 col-sm col-md-8 movie-overview">
-                            <span>{props.overview}</span>
+                    <div className="container row-movie-content" >
+                        <div className="col-xl-6 col-sm col-md-8 ">
+                            <h5>{props.title}</h5>
+                            <span>{props.release_date}</span>
                         </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-lg-6 col-sm col-md-8 movie-geners-label">
-                            <span>Genres:</span>
-
-
+                        <div className="col-xl-6 col-sm col-md-2">
+                            <h5>{props.vote_average}</h5>
                         </div>
-                        <div className="col-lg-6 col-sm col-md-2 movie-geners-type">
-                            {concatGenresMap()}
-                        </div>
-                    </div>
 
-                    <div className="row ">
-                        <div className="col-lg-12 col-sm col-md-8 companies-label">
-                            <span>Production Companies</span>
-                        </div>
-                    </div>
 
-                    <div className="row ">
-                        <div className="col-lg-12 col-sm col-md-8 companies-box">
-                           {productionCompaniesMap()}
-                        </div>
                     </div>
 
                 </div>
-
-
             </div>
         </div>
     )

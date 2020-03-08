@@ -10,7 +10,6 @@ import { get20PopMovies } from '../../Store/Actions/GetMoviesAction'
 const Movies = (props) => {
 
     function getMovieIdToFather(id) {
-        // select movie logical
         props.getMovieId(id);
     }
 

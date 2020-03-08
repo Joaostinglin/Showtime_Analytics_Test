@@ -4,40 +4,49 @@ import MoviesApi from '../../Api/MoviesApi';
 import CardMovieDetail from './CardMovieDetail/CardMovieDetail';
 import Loading from './CardMovieDetail/Loading';
 
+import dispatch from 'rxjs/internal/observable/range'
+import { connect } from 'react-redux'
+import { getMovieById } from '../../Store/Actions/GetMoviesAction'
+
 
 const MovieDetail = (props) => {
-    const [movieDetail, setMovieDetail] = useState([])
-    const [loading, setLoading] = useState(false)
 
-    //fazer a chamada para a url do detalhe do filme
     useEffect(() => {
-        setLoading(true)
-        const moviesApi = new MoviesApi();
-        moviesApi.getById(props.movieId)
-            .then(result => {
-                setMovieDetail(result.data)
-                setLoading(false)
-            })
-            .catch(err => console.log(err))
-    }, [props.movieId])
+      props.getMoviesByIdDipatch(props.movieId)
+    }, [])
   
     return (
         <div className="detail-body">
-            {loading ?
+            {props.movies.loading ?
                 <Loading /> :
                 <CardMovieDetail 
-                    title={movieDetail.original_title} 
-                    release_date={movieDetail.release_date} 
-                    vote_average={movieDetail.vote_average}
-                    overview={movieDetail.overview}
-                    poster_path={movieDetail.poster_path}
-                    production_companies={movieDetail.production_companies}
-                    genres={movieDetail.genres} />
+                    title={props.movies.movieById.original_title} 
+                    release_date={props.movies.movieById.release_date} 
+                    vote_average={props.movies.movieById.vote_average}
+                    overview={props.movies.movieById.overview}
+                    poster_path={props.movies.movieById.poster_path}
+                    production_companies={props.movies.movieById.production_companies}
+                    genres={props.movies.movieById.genres} />
                }
-            {!loading && <button id="back-button" onClick={() => props.getMovieId(0)} className="btn btn-primary">back</button>}
+            {!props.movies.loading && <button id="back-button" onClick={() => props.getMovieId(0)} className="btn btn-primary">back</button>}
 
         </div>
     )
 }
 
-export default MovieDetail;
+
+export const mapDispatchToProps = (dispatch) => {
+    return {
+        getMoviesByIdDipatch: (id) => dispatch(getMovieById(id))
+    }
+}
+
+const mapStateToProps = (state) => {
+    return state
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail);
+
+
+
+
