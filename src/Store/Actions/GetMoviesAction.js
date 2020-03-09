@@ -42,7 +42,6 @@ export const getMovieByIdApi = (id) => {
         dispatch(getMovieByIdInitial())
         moviesApi.getById(id)
             .then(response => {
-                dispatch(getMovieByIdInitial())
                 dispatch(getMovieByIdSuccess(response.data))
             })
             .catch(err => console.log(err))
