@@ -1,23 +1,25 @@
 import { dispatch } from 'rxjs/internal/observable/range'
 import MoviesApi from '../../Api/MoviesApi'
 
+import types from '../Constants';
+
 export const getMoviesSuccess = (movies) => {
     return {
-        type: 'GET_MOVIES',
+        type: types.GET_MOVIES,
         movies
     }
 }
 
 export const getMovieByIdInitial = () => {
     return {
-        type: 'GET_MOVIES_BY_ID_INIT',
+        type: types.GET_MOVIES_BY_ID_INIT,
         loading: true
     }
 }
 
 export const getMovieByIdSuccess = (movie) => {
     return {
-        type: 'GET_MOVIES_BY_ID_SUCCESS',
+        type: types.GET_MOVIES_BY_ID_SUCCESS,
         loading: false,
         movie
     }

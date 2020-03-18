@@ -14,11 +14,6 @@ div.card-content-body{
    margin-bottom: 10px;
 }
 
-div.search-field{
-    width: 75%;
-    display: inline-flex; 
-}
-
 div.body-content a{
     color: rgb(24, 21, 21);
 }

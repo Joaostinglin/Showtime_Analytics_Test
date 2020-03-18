@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { getMovieById } from '../../Store/Actions/GetMoviesAction'
 
 
-const MovieDetail = (props) => {
+export const MovieDetail = (props) => {
 
     useEffect(() => {
       props.getMoviesByIdDipatch(props.movieId)
