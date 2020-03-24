@@ -3,6 +3,7 @@
 
 This is a test for Showtime Analytics Company
 
+You can check that live on [this link](https://showtimeanalytics.herokuapp.com/).
 
 ## Pre-Requirements
 
