@@ -1,14 +1,17 @@
-import axios from 'axios'
 import Constants from '../Statics/Constants';
 
 class MoviesApi {
 
-    getMovies() {
-        return axios.get(Constants.urlBase + Constants.getTopRatedMovies + Constants.tmdbKey);
+    async getMovies() {
+        let response = await fetch(Constants.urlBase + Constants.getTopRatedMovies + Constants.tmdbKey);
+        let data = await response.json()
+        return data;
     }
 
-    getById(movieId) {
-        return axios.get(Constants.urlBase + Constants.getById + movieId + "?" + Constants.tmdbKey);
+    async getById(movieId) {
+        let response = await fetch(Constants.urlBase + Constants.getById + movieId + "?" + Constants.tmdbKey);
+        let data = await response.json()
+        return data;
     }
 }
 

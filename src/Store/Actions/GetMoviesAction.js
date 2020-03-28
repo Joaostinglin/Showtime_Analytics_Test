@@ -26,13 +26,12 @@ export const getMovieByIdSuccess = (movie) => {
 }
 
 // API CALLS
-
 export const getMoviesListApi = () => {
     const moviesApi = new MoviesApi();
     return dispatch => {
         moviesApi.getMovies()
             .then(response => {
-                dispatch(getMoviesSuccess(response.data.results))
+                dispatch(getMoviesSuccess(response.results))
             })
             .catch(err => console.log(err))
     }
@@ -44,7 +43,7 @@ export const getMovieByIdApi = (id) => {
         dispatch(getMovieByIdInitial())
         moviesApi.getById(id)
             .then(response => {
-                dispatch(getMovieByIdSuccess(response.data))
+                dispatch(getMovieByIdSuccess(response))
             })
             .catch(err => console.log(err))
     }
